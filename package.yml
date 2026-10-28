@@ -1,0 +1,18 @@
+package: community.lazycat.app.metube
+version: 2026.10.27
+name: MeTube
+description: Self-hosted video downloader web UI for yt-dlp supporting YouTube and other sites
+min_os_version: "1.5.0"
+homepage: https://github.com/alexta69/metube
+author: alexta69
+license: AGPL-3.0
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: MeTube
+    description: 自托管视频下载器（yt-dlp 图形界面），支持 YouTube 等站点下载与音频提取
+  en:
+    name: MeTube
+    description: Self-hosted video downloader web UI for yt-dlp supporting YouTube and other sites

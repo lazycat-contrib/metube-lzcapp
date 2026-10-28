@@ -1,0 +1,39 @@
+application:
+  subdomain: metube
+  multi_instance: false
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://metube:8081/
+  injects:
+    - id: open-save-chooser
+      on: browser
+      when:
+        - /*
+      do:
+        - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
+
+services:
+  metube:
+    # upstream: docker.io/alexta69/metube:2026.10.27
+    image: docker.1ms.run/alexta69/metube:2026.10.27
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DOWNLOAD_DIR=/downloads
+      - STATE_DIR=/downloads/.state
+      - TEMP_DIR=/downloads/.temp
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8081/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    binds:
+      - /lzcapp/var/downloads:/downloads
+
+usage: |
+  MeTube 是 yt-dlp 的图形化下载器：粘贴 YouTube 等视频链接即可下载视频或仅提取音频。
+  下载的文件保存在应用数据目录 downloads 下，可通过懒猫文件管理器访问。
+  请遵守目标网站的服务条款，仅下载有权限保存的内容。
