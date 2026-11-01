@@ -13,11 +13,10 @@ application:
         - /*
       do:
         - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
-
 services:
   metube:
-    # upstream: docker.io/alexta69/metube:2026.10.27
-    image: docker.1ms.run/alexta69/metube:2026.10.27
+    # upstream: docker.io/alexta69/metube:2026.11.01
+    image: docker.1ms.run/alexta69/metube:2026.11.01
     environment:
       - PUID=1000
       - PGID=1000
@@ -32,7 +31,6 @@ services:
       start_period: 30s
     binds:
       - /lzcapp/var/downloads:/downloads
-
 usage: |
   MeTube 是 yt-dlp 的图形化下载器：粘贴 YouTube 等视频链接即可下载视频或仅提取音频。
   下载的文件保存在应用数据目录 downloads 下，可通过懒猫文件管理器访问。
