@@ -1,5 +1,5 @@
 package: community.lazycat.app.metube
-version: 2026.11.6
+version: 2026.11.10
 name: MeTube
 description: Self-hosted video downloader web UI for yt-dlp supporting YouTube and other sites
 min_os_version: "1.5.0"

@@ -15,8 +15,8 @@ application:
         - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
 services:
   metube:
-    # upstream: docker.io/alexta69/metube:2026.11.06
-    image: docker.1ms.run/alexta69/metube:2026.11.06
+    # upstream: docker.io/alexta69/metube:2026.11.10
+    image: docker.1ms.run/alexta69/metube:2026.11.10
     environment:
       - PUID=1000
       - PGID=1000
